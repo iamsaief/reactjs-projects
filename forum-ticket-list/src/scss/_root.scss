@@ -1,0 +1,19 @@
+// :root elements
+:root {
+	--#{$variable-prefix}-body-font-family: #{$body-font-family};
+	--#{$variable-prefix}-body-font-size: #{$body-font-size};
+	--#{$variable-prefix}-body-font-weight: #{$body-font-weight};
+	--#{$variable-prefix}-body-line-height: #{$body-line-height};
+	--#{$variable-prefix}-body-letter-spacing: #{$body-letter-spacing};
+	--#{$variable-prefix}-body-color: #{$body-color};
+	--#{$variable-prefix}-body-bg: #{$body-bg};
+
+	// Colors
+	--#{$variable-prefix}-primary-black: #{$primary-black};
+	--#{$variable-prefix}-primary-gray: #{$primary-gray};
+	--#{$variable-prefix}-primary-blue: #{$primary-blue};
+	--#{$variable-prefix}-primary-white: #{$primary-white};
+
+	--#{$variable-prefix}-focus-box-shadow: #{$focus-box-shadow};
+	--#{$variable-prefix}-border-color: #{$border-color};
+}

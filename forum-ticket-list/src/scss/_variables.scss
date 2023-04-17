@@ -1,0 +1,33 @@
+// Variables, included in :root
+
+$variable-prefix: tl;
+
+$font-size-root: 20px !default;
+$font-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans',
+	sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+$font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$font-roboto-sans-serif: 'Roboto', sans-serif, system-ui, -apple-system;
+
+$body-font-family: $font-roboto-sans-serif;
+$body-font-size: 15px;
+$body-font-weight: 400;
+$body-line-height: 2;
+$body-letter-spacing: 0.26px;
+
+$body-color: #555555;
+$body-bg: #f9f9f9;
+
+// Colors
+$primary-black: #000000;
+$primary-gray: #555555;
+$primary-blue: #286ef1;
+$primary-white: #ffffff;
+
+$success: #11b211;
+$danger: #f43c3d;
+$primary: $primary-blue;
+$default: $primary-gray;
+$border-color: #ededed;
+
+// Shadow
+$focus-box-shadow: 0 0 0 4px rgba(40, 110, 241, 0.2);

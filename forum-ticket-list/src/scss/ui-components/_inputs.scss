@@ -1,0 +1,74 @@
+// Input Field Styles
+.tl-form-group {
+	&:not(:first-child) {
+		margin-top: 10px;
+	}
+	&--has-icon {
+		input[type='search'].tl-form-control {
+			background-image: url(tlSearchIcon());
+			background-repeat: no-repeat;
+			background-position: center left 20px;
+			padding-left: 46px;
+		}
+	}
+	&--radius {
+		input[type='search'].tl-form-control {
+			background-color: #f2f2f2;
+			border-radius: 23px;
+		}
+	}
+}
+
+.tl-form-control,
+textarea.tl-form-control,
+input.tl-form-control {
+	display: block;
+	width: 100%;
+	padding: 5px 15px;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 2;
+	height: 40px;
+	color: var(--tl-primary-black);
+	background-color: var(--tl-primary-white);
+	background-clip: padding-box;
+	border: 1px solid #f2f2f2;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 4px;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+textarea.tl-form-control {
+	min-height: 130px;
+}
+
+select.tl-form-control {
+	background-image: url(tlAngleDown());
+	background-repeat: no-repeat;
+	background-position: center right 10px;
+	padding-right: 25px;
+}
+
+.tl-form-control {
+	&:focus {
+		outline: 0;
+		color: var(--tl-primary-black);
+		background-color: var(--tl-primary-white);
+		box-shadow: var(--tl-focus-box-shadow);
+		border-color: lighten($color: $primary-blue, $amount: 25);
+	}
+}
+
+.tl-form-label {
+	@extend .tl-fw-5;
+	@extend .tl-mb-10;
+	display: block;
+
+	&--has-tooltip {
+		display: flex;
+		gap: 6px;
+		align-items: center;
+	}
+}

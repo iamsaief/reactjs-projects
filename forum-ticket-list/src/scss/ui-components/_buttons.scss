@@ -1,0 +1,104 @@
+// Button Styles
+.tl-button {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 15px;
+	color: #212529;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 5px 15px;
+	border-radius: 4px;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
+
+	// button variations
+	&--primary {
+		color: #fff;
+		background-color: #0d6efd;
+		border-color: #0d6efd;
+	}
+	&--danger {
+		color: #fff;
+		background-color: #f43c3d;
+		border-color: #f43c3d;
+	}
+	&--outline {
+		color: #000;
+		background-color: transparent;
+		border-color: #ededed;
+	}
+
+	&--disabled,
+	&:disabled {
+		color: #6b6b6b;
+		background-color: #f5f5f5;
+		border-color: #e6e6e6;
+		cursor: not-allowed;
+	}
+
+	&--link {
+		color: #0d6efd;
+	}
+
+	// Button Sizes
+	&--lg {
+		// height: 40px;
+		padding: 12px 15px;
+	}
+	&--md {
+		// height: 36px;
+		padding: 10px 13px;
+	}
+	&--sm {
+		// height: 30px;
+		padding: 7px 12px;
+	}
+
+	// Iconic Buttons
+	&--has-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
+
+		.tl-button__icon {
+			display: inline-flex;
+		}
+	}
+
+	&--is-iconic {
+		padding-inline: 9px;
+		padding-block: 7.5px;
+	}
+}
+
+.tl-button-group {
+	&:not(.tl-button-group--between) {
+		display: flex;
+		gap: 10px;
+		@include breakpoint-max(499.98) {
+			flex-direction: column;
+		}
+	}
+
+	&--between {
+		@include breakpoint-min(500) {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		@include breakpoint-max(499.98) {
+			.tl-button {
+				justify-content: center;
+				width: 100%;
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

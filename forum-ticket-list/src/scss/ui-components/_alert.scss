@@ -1,0 +1,39 @@
+// Alert Styles
+.tl-alert {
+	display: flex;
+	gap: 15px;
+	padding: 15px 20px;
+	border-radius: 4px;
+	letter-spacing: 0.26px;
+
+	&__icon {
+		flex-shrink: 0;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background-size: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url(csTooltipIcon());
+		margin-top: 6px;
+	}
+}
+
+$csAlertOptions: (
+	'primary' $primary-blue #dfe9fc,
+	'success' $success #e4fee4,
+	'warning' #ffc800 #fee27f,
+	'danger' $danger #feecec,
+	'default' $primary-gray #ededed
+);
+
+@each $prefix, $color, $bgColor in $csAlertOptions {
+	.tl-alert {
+		&--#{$prefix} {
+			background-color: #{$bgColor};
+			.tl-alert__icon {
+				background-image: url(csTooltipIcon($color));
+			}
+		}
+	}
+}

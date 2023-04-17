@@ -1,0 +1,84 @@
+// Commonly used utilities
+$base-grid: 2;
+
+// Font Weights
+$base-weight: 100;
+@for $i from 1 to 10 {
+	.#{$variable-prefix}-fw-#{$i} {
+		font-weight: #{$base-weight * $i};
+	}
+}
+
+// Font Sizes
+$base-font: $base-grid;
+@for $i from 1 through 15 {
+	$result: $base-font * $i;
+	.#{$variable-prefix}-fs-#{$result} {
+		font-size: #{$result}px;
+	}
+}
+
+// Margin and Padding
+@for $i from 1 through 30 {
+	$result: $base-grid * $i;
+	// Margin
+	.#{$variable-prefix}-m-#{$result} {
+		margin: #{$result}px;
+	}
+	.#{$variable-prefix}-mx-#{$result} {
+		margin-inline: #{$result}px;
+	}
+	.#{$variable-prefix}-my-#{$result} {
+		margin-block: #{$result}px;
+	}
+	.#{$variable-prefix}-mt-#{$result} {
+		margin-top: #{$result}px;
+	}
+	.#{$variable-prefix}-mr-#{$result} {
+		margin-right: #{$result}px;
+	}
+	.#{$variable-prefix}-mb-#{$result} {
+		margin-bottom: #{$result}px;
+	}
+	.#{$variable-prefix}-ml-#{$result} {
+		margin-left: #{$result}px;
+	}
+
+	// Padding
+	.#{$variable-prefix}-p-#{$result} {
+		padding: #{$result}px;
+	}
+	.#{$variable-prefix}-px-#{$result} {
+		padding-inline: #{$result}px;
+	}
+	.#{$variable-prefix}-py-#{$result} {
+		padding-block: #{$result}px;
+	}
+	.#{$variable-prefix}-pt-#{$result} {
+		padding-top: #{$result}px;
+	}
+	.#{$variable-prefix}-pr-#{$result} {
+		padding-right: #{$result}px;
+	}
+	.#{$variable-prefix}-pb-#{$result} {
+		padding-bottom: #{$result}px;
+	}
+	.#{$variable-prefix}-pl-#{$result} {
+		padding-left: #{$result}px;
+	}
+}
+
+// Colors
+$colorUtilities: (
+	#{$variable-prefix}-body-color,
+	#{$variable-prefix}-body-bg,
+	#{$variable-prefix}-primary-black,
+	#{$variable-prefix}-primary-blue,
+	#{$variable-prefix}-primary-white
+);
+
+@each $color in $colorUtilities {
+	.#{$color} {
+		color: var(--#{$color});
+	}
+}
