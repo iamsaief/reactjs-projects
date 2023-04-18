@@ -4,7 +4,7 @@ import UnLikeIcon from '../../assets/unlike.svg';
 
 function LikeUnlike(props) {
 	return (
-		<div className="flex gap-10 w-48">
+		<div className="flex gap-5 w-48 justify-end">
 			<div className="flex gap-1">
 				<div className="shrink-0">
 					<img className="w-5 block" src={LikeIcon} alt="Like" />
