@@ -4,13 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchVideos } from '../../features/videos/videosSlice';
 import Loading from '../ui/Loading';
 
-function VideoGrid(props) {
+function VideoGrid() {
 	const dispatch = useDispatch();
 	const { videos, isLoading, isError, error } = useSelector((state) => state.videos);
+	const { tags, search } = useSelector((state) => state.filter);
 
 	useEffect(() => {
-		dispatch(fetchVideos());
-	}, [dispatch]);
+		dispatch(fetchVideos({ tags, search }));
+	}, [dispatch, tags, search]);
 
 	// logic for what to render
 	let content;
