@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
-import { SidebarContext } from '../contexts/SidebarContext';
+import { Link } from 'react-router-dom';
 import { BsBag } from 'react-icons/bs';
 import { SiShopee } from 'react-icons/si';
+import { SidebarContext } from '../contexts/SidebarContext';
 import { CartContext } from '../contexts/CartContext';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
 	const [isActive, setIsActive] = useState(false);
@@ -19,7 +19,7 @@ const Header = () => {
 	return (
 		<header
 			className={`${
-				isActive ? 'bg-white/50 backdrop-blur py-3 shadow-md' : 'bg-white py-6'
+				isActive ? 'bg-white/50 backdrop-blur py-3 shadow-md' : 'bg-transparent py-6'
 			} fixed w-full z-10 transition-all`}
 		>
 			<div className="container mx-auto flex items-center justify-between h-full">

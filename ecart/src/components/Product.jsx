@@ -14,7 +14,12 @@ const Product = ({ product }) => {
 			<div className="h-[300px] mb-4 border border-[#e4e4e4] relative overflow-hidden group transition ">
 				<div className="w-full h-full flex justify-center items-center">
 					<div className="w-[200px] mx-auto flex justify-center items-center">
-						<img src={image} alt={title} className="max-h-[160px] group-hover:scale-110 transition duration-300" />
+						<img
+							src={image}
+							alt={title}
+							className="max-h-[160px] group-hover:scale-110 transition duration-300"
+							loading="lazy"
+						/>
 					</div>
 					{/* buttons */}
 					<div className="absolute top-0 right-0 p-2 bg-red-700- flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-12 group-hover:translate-x-0">
@@ -25,7 +30,7 @@ const Product = ({ product }) => {
 							<BsPlus className="text-3xl" />
 						</button>
 						<Link
-							to={`product/${id}`}
+							to={`/products/${id}`}
 							className="w-12 h-12 bg-white flex justify-center items-center text-primary drop-shadow-xl"
 						>
 							<BsEyeFill />
@@ -36,7 +41,7 @@ const Product = ({ product }) => {
 			{/* category, title, price */}
 			<div>
 				<div className="text-sm capitalize text-gray-500 mb-1">{category}</div>
-				<Link to={`product/${id}`} className="font-semibold mb-1">
+				<Link to={`/products/${id}`} className="font-semibold mb-1">
 					<h2>{title}</h2>
 				</Link>
 				<div className="font-semibold text-gray-800">$ {price}</div>

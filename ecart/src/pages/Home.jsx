@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { ProductContext } from '../contexts/ProductContext';
 import Product from '../components/Product';
+import Hero from '../components/Hero';
 
 const Home = () => {
 	const { products, isLoading, isError, error } = useContext(ProductContext);
@@ -30,7 +31,12 @@ const Home = () => {
 		);
 	}
 
-	return <section className="container mx-auto pt-[85px] pb-20">{content}</section>;
+	return (
+		<>
+			<Hero />
+			<section className="container mx-auto pt-[85px] pb-20">{content}</section>
+		</>
+	);
 };
 
 export default Home;
