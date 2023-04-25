@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 rtk-setup
+html-template
