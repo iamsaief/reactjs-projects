@@ -28,14 +28,15 @@ const Header = () => {
 					<SiShopee className="text-4xl" />
 				</Link>
 				<div
-					// onClick={() => setIsOpen(!isOpen)}
 					onClick={() => dispatch(toggleSidebar())}
 					className="cursor-pointer relative flex items-center justify-center w-[30px] h-[30px]"
 				>
 					<BsBag className="text-xl" />
-					<div className="bg-red-500 text-white absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] rounded-full flex items-center justify-center">
-						{quantity}
-					</div>
+					{quantity > 0 && (
+						<div className="bg-red-500 text-white absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] rounded-full flex items-center justify-center">
+							{quantity}
+						</div>
+					)}
 				</div>
 			</div>
 		</header>
