@@ -8,6 +8,7 @@ import { openModal } from '../features/modal/modalSlice';
 import { closeSidebar } from '../features/sidebar/sidebarSlice';
 import { motion } from 'framer-motion';
 import Backdrop from './Backdrop';
+import NotFound from './NotFound';
 
 const slideIn = {
 	hidden: {
@@ -57,34 +58,38 @@ const Sidebar = () => {
 				</div>
 
 				{/* Cart Total */}
-				<div className="flex flex-col gap-y-3 py-4 border-t">
-					<div className="flex w-full justify-between items-center">
-						<div className="uppercase font-semibold text-red-500">
-							<span className="mr-2">Total: $ {total}</span>
+				{quantity > 0 ? (
+					<div className="flex flex-col gap-y-3 py-4 border-t">
+						<div className="flex w-full justify-between items-center">
+							<div className="uppercase font-semibold text-red-500">
+								<span className="mr-2">Total: $ {total}</span>
+							</div>
+							<div
+								onClick={() => {
+									dispatch(openModal());
+								}}
+								className="cursor-pointer py-2 bg-red-400 text-white w-8 h-8 flex justify-center items-center text-xl rounded-sm"
+								title="Remove all the items from cart"
+							>
+								<FiTrash2 />
+							</div>
 						</div>
-						<div
-							onClick={() => {
-								dispatch(openModal());
-							}}
-							className="cursor-pointer py-2 bg-red-400 text-white w-8 h-8 flex justify-center items-center text-xl rounded-sm"
-							title="Remove all the items from cart"
+						<Link
+							to="/"
+							className="bg-gray-200 flex p-3 justify-center items-center text-primary w-full font-medium rounded-sm"
 						>
-							<FiTrash2 />
-						</div>
+							View Cart
+						</Link>
+						<Link
+							to="/"
+							className="bg-primary flex p-3 justify-center items-center text-white w-full font-medium rounded-sm"
+						>
+							Checkout
+						</Link>
 					</div>
-					<Link
-						to="/"
-						className="bg-gray-200 flex p-3 justify-center items-center text-primary w-full font-medium rounded-sm"
-					>
-						View Cart
-					</Link>
-					<Link
-						to="/"
-						className="bg-primary flex p-3 justify-center items-center text-white w-full font-medium rounded-sm"
-					>
-						Checkout
-					</Link>
-				</div>
+				) : (
+					<NotFound />
+				)}
 			</motion.aside>
 		</Backdrop>
 	);
