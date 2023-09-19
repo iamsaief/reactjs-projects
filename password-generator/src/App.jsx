@@ -1,5 +1,8 @@
 import { useState } from "react";
 import usePasswordGenerator from "./hooks/use-pass-generator";
+import StrengthIndicator from "./components/StrengthIndicator";
+import Button from "./components/Button";
+import Checkbox from "./components/Checkbox";
 
 function App() {
 	const [charLength, setCharLength] = useState(4);
@@ -35,12 +38,11 @@ function App() {
 				{password && (
 					<div className="psg__header flex justify-between items-center mb-6">
 						<div className="psg__title text-3xl font-bold text-white/80">{password}</div>
-						<button
-							className="psg__copy-btn px-3.5 py-2.5 shadow-sm bg-cyan-500 text-white text-sm rounded uppercase ring-offset-2 focus:ring-2 ring-offset-slate-900 focus:ring-cyan-500 outline-none leading-none"
+						<Button
+							customClass="psg__copy-btn px-3.5 py-2.5 text-sm"
 							onClick={handleCopy}
-						>
-							{copied ? "copied" : "copy"}
-						</button>
+							label={copied ? "copied" : "copy"}
+						/>
 					</div>
 				)}
 				{/* Password length and slider */}
@@ -63,35 +65,20 @@ function App() {
 					{checkboxData.map((checkbox, index) => {
 						const { id, label, checked } = checkbox;
 						return (
-							<div key={checkbox.id} className="flex gap-2 align-top leading-none">
-								<input
-									type="checkbox"
-									id={id}
-									checked={checked}
-									className="rounded border-white/70 text-cyan-500 focus:ring-cyan-500 focus:ring-offset-slate-900 bg-transparent cursor-pointer"
-									onChange={() => handleCheckBoxChange(index)}
-								/>
-								<label htmlFor={id} className="cursor-pointer">
-									{label}
-								</label>
-							</div>
+							<Checkbox key={id} id={id} checked={checked} label={label} onChange={() => handleCheckBoxChange(index)} />
 						);
 					})}
 				</div>
 				{/* Strength */}
-				<div className="psg__strength flex justify-between items-center mt-6">
-					<span>Strength:</span>
-					<span className="font-semibold">Medium</span>
-				</div>
+				<StrengthIndicator password={password} />
 				{/* Error handling */}
 				{errorMsg && <div className="psg__error-msg text-sm text-red-500 mt-4">{errorMsg}</div>}
 				{/* Generate btn */}
-				<button
-					className="psg__generate-btn w-full mt-4 p-4 shadow-sm bg-cyan-500 text-white text-xl rounded uppercase ring-offset-2 focus:ring-2 ring-offset-slate-900 focus:ring-cyan-500 outline-none font-semibold"
+				<Button
+					label="Generate Password"
+					customClass="psg__generate-btn w-full mt-7 p-5 text-xl font-semibold"
 					onClick={() => generatePassword(checkboxData, charLength)}
-				>
-					Generate Password
-				</button>
+				/>
 			</div>
 		</div>
 	);
