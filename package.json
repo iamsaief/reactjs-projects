@@ -12,7 +12,7 @@
 	},
 	"homepage": "http://iamsaief.github.io/reactjs-projects",
 	"dependencies": {
-		"framer-motion": "^10.13.0",
+		"framer-motion": "^11.0.5",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-icons": "^4.8.0",
